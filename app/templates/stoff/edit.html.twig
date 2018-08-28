@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Stoff{% endblock %}
+
+{% block body %}
+    <h1>Edit Stoff</h1>
+
+    {{ include('stoff/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('stoff_index') }}">back to list</a>
+
+    {{ include('stoff/_delete_form.html.twig') }}
+{% endblock %}

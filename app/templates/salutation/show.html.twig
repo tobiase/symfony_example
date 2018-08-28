@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Salutation{% endblock %}
+
+{% block body %}
+    <h1>Salutation</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ salutation.id }}</td>
+            </tr>
+            <tr>
+                <th>Salutation</th>
+                <td>{{ salutation.salutation }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('salutation_index') }}">back to list</a>
+
+    <a href="{{ path('salutation_edit', {'id': salutation.id}) }}">edit</a>
+
+    {{ include('salutation/_delete_form.html.twig') }}
+{% endblock %}

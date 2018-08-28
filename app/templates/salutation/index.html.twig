@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Salutation index{% endblock %}
+
+{% block body %}
+    <h1>Salutation index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Salutation</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for salutation in salutations %}
+            <tr>
+                <td>{{ salutation.id }}</td>
+                <td>{{ salutation.salutation }}</td>
+                <td>
+                    <a href="{{ path('salutation_show', {'id': salutation.id}) }}">show</a>
+                    <a href="{{ path('salutation_edit', {'id': salutation.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('salutation_new') }}">Create new</a>
+{% endblock %}

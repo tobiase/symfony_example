@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Stoff{% endblock %}
+
+{% block body %}
+    <h1>Create new Stoff</h1>
+
+    {{ include('stoff/_form.html.twig') }}
+
+    <a href="{{ path('stoff_index') }}">back to list</a>
+{% endblock %}
